@@ -4,10 +4,10 @@ convert multiple images into 1 pdf and reduce the size
 import os
 from PIL import Image
 
-print("--------Welcomr to IMAGE COMPRESSOR--------")
+print("--------Welcomr TO IMAGE COMPRESSOR--------")
 
 print("Enter the path of image one by one (type 'done' when finished): ")
-image_paths = []
+image_paths = []                                                     # Empty list
 
 while True:
     path = input("Image path:")                                      # give input as image adress or path
@@ -29,7 +29,7 @@ else:
         total_original_size += os.path.getsize(path) / (1024 * 1024)                      # convert size into MB
         img = Image.open(path)
         if img.mode == "RGBA":
-            img= img.convert("RGB")
+            img= img.convert("RGB")                                                         
         images.append(img)
 
     output_pdf = input("Enter the name of new file (do not include = .pdf): ")
